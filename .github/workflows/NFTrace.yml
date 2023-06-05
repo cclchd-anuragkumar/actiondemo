@@ -1,0 +1,46 @@
+name: NFTrace project test
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to production
+        run: ssh -i Beast-Application-Server_key.pem azureuser@20.242.11.14 "cd /path/to/project && git pull && ./deploy.sh"
+          # Add your deployment commands here
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+          # Add your dependency installation commands here
+
+      - name: Run tests
+        run: npm test
+          # Add your test commands here
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build project
+        run: npm run build
+          # Add your build commands here
