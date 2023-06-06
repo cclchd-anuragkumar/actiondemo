@@ -27,9 +27,9 @@ jobs:
       - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
-          key: ${{ secrets.open-ssh  }}
-          host: ${{ secrets.3.109.123.234 }}
-          username: ${{ secrets.ubuntu }}
+          key: ${{ open-ssh  }}
+          host: ${{ 3.109.123.234 }}
+          username: ${{ ubuntu }}
           script: |
             cd NFTrace/index.json 
             git pull
