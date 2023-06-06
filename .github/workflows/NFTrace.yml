@@ -27,13 +27,13 @@ jobs:
       - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
-          key: ${{ AKIA6MDAOOMJRCRXDW2M  }}
-          host: ${{ ip-172-31-14-71.ap-south-1.compute.internal }}
-          username: ${{ ubuntu }}
+          key: ${{ secret.SECRET_KEY }}
+          host: ${{ HOST_NAME }}
+          username: ${{ USER_NAME }}
           script: |
             cd NFTrace/index.json 
             git pull
             npm install --production
             pm2 restart app.js
-            pm2 start npm -- start
+            pm2 start npm -- starT
             
