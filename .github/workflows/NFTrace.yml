@@ -27,8 +27,8 @@ jobs:
       - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
-          key: ${{ open-ssh  }}
-          host: ${{ 3.109.123.234 }}
+          key: ${{ AKIA6MDAOOMJRCRXDW2M  }}
+          host: ${{ ip-172-31-14-71.ap-south-1.compute.internal }}
           username: ${{ ubuntu }}
           script: |
             cd NFTrace/index.json 
