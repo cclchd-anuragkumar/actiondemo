@@ -26,5 +26,5 @@ jobs:
         run: npm install
 
       - name: Build and package app
-        run: npm run build
+        run: npm run test
           # Build and package your app (e.g., npm run build)
