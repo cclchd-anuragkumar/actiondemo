@@ -36,6 +36,5 @@ jobs:
             git pull
             npm install --production
             pm2 restart app.js
-            npm i
             pm2 start npm -- start
             
