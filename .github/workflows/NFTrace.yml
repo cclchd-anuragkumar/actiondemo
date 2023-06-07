@@ -30,10 +30,12 @@ jobs:
           key: ${{ secrets.SECRET_KEY }}
           host: ${{ secrets.HOST_NAME }}
           username: ${{ secrets.USER_NAME }}
+          port: ${{ secrets.PORT_EXPOSE }}
           script: |
             cd NFTrace/index.json 
             git pull
             npm install --production
             pm2 restart app.js
+            npm i
             pm2 start npm -- start
             
